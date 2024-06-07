@@ -6,7 +6,6 @@ import { SkillsEditor } from "./SkillsEdit";
 export default function MainEditor(props) {
     const {
         BasicData,
-        EduData,
         ExperienceData,
         SkillsData,
         handleInfoChange,
@@ -18,7 +17,7 @@ export default function MainEditor(props) {
     return (
         <div className="Editor-side">
             <BasicInfoEdit data={BasicData} handleChange={handleInfoChange} />
-            <EducationEditor data={EduData} handleChange={handleEduChange} />
+            <EducationEditor onAddItem={handleEduChange}/>
             <ExperienceEditor data={ExperienceData} handleChange = {handleExperienceChange} />
             <SkillsEditor data={SkillsData} handleChange = {handleSkillsChange} />
         </div>
