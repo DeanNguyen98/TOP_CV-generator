@@ -21,14 +21,23 @@ function App() {
       ...BasicInfo, [name]: value
     })
   }
+
+  function handleAddEduItem(EduObject) {
+    setEduInfo(prevEduInfo => [
+      ...prevEduInfo, EduObject
+    ])
+  }
+
   return (
     <>
+      {console.log(EduInfo)}
       <MainEditor
         BasicData={BasicInfo}
         EduData = {EduInfo}
         ExperienceData = {ExperienceInfo}
         SkillsData = {SkillsInfo}
         handleInfoChange = {handleBasicInfoChange}
+        handleEduChange = {handleAddEduItem}
       />
     </>
   )
