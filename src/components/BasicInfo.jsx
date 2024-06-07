@@ -1,6 +1,5 @@
 export function BasicInfoEdit (props) {
     const {data, handleChange} = props;
-    console.log(data);
     return (
         <>
         <form className="form-container">
