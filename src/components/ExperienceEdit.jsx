@@ -4,11 +4,11 @@ import ItemForm from './ItemForm';
 
 export function ExperienceEditor ({ExpData, onAddItem, onEditItem}) {
     const [ExpObject, setExpObject] = useState({
-        company: '',
+        Company: '',
         Title: '',
-        Expstart: '',
-        ExpEnd: '',
-        ExpDescription: ''
+        startDate: '',
+        endDate: '',
+        Description: ''
     })
 
     function handleAddExpObject (e) {
@@ -30,32 +30,32 @@ export function ExperienceEditor ({ExpData, onAddItem, onEditItem}) {
                 e.preventDefault();
                 onAddItem({...ExpObject, id: uuidv4()});
                 setExpObject({
-                    company: '',
+                    Company: '',
                     Title: '',
                     startDate: '',
                     endDate: '',
-                    ExpDescription: ''
+                    Description: ''
                 })
             }}>
-                <label className="form-label" htmlFor="company">
+                <label className="form-label" htmlFor="Company">
                     <span>Company name</span>
-                    <input type="text" id="company" name="company" onChange={handleAddExpObject}></input>
+                    <input type="text" id="company" name="Company" value={ExpObject.Company} onChange={handleAddExpObject}></input>
                 </label>
                 <label className="form-label" htmlFor="Title">
                     <span>Title</span>
-                    <input type="text" id="jobTitle" name="Title" onChange={handleAddExpObject}></input>
+                    <input type="text" id="jobTitle" name="Title" value={ExpObject.Title} onChange={handleAddExpObject}></input>
                 </label>
                 <label className="form-label" htmlFor="startDate">
                     <span>Start date</span>
-                    <input type="month" id="startDate" name="startDate" onChange={handleAddExpObject}></input>
+                    <input type="month" id="startDate" name="startDate" value={ExpObject.startDate} onChange={handleAddExpObject}></input>
                 </label>
                 <label className="form-label" htmlFor="endDate">
                     <span>End date</span>
-                    <input type="month" id="endDate" name="endDate" onChange={handleAddExpObject}></input>
+                    <input type="month" id="endDate" name="endDate" value={ExpObject.endDate} onChange={handleAddExpObject}></input>
                 </label>
-                <label className="form-label" htmlFor="ExpDescription">
+                <label className="form-label" htmlFor="Description">
                     <span>Job description</span>
-                    <textarea type="text" id="ExpDescription" name="ExpDescription" onChange={handleAddExpObject}></textarea>
+                    <textarea type="text" id="Description" name="Description" value={ExpObject.Description} onChange={handleAddExpObject}></textarea>
                 </label>
                 <button type="submit">Add Experience</button>
             </form>
