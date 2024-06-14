@@ -1,11 +1,14 @@
 import { useState } from "react";
-export function EducationEditor({onAddItem}) {
+import { v4 as uuidv4 } from 'uuid';
+import ItemForm from "./ItemForm";
+
+export function EducationEditor({onAddItem, EduData, onEditItem}) {
     const [EduObject, setEduObject] = useState({
-        organisation: '',
+        Organisation: '',
         degree: '',
         startDate: '',
         endDate: '',
-        location: ''
+        location: '',
     })
     function handleBasicEduChange (e) {
         const {name, value} = e.target;
@@ -15,20 +18,27 @@ export function EducationEditor({onAddItem}) {
       }
     return (
         <>
+            {EduData.length > 0 && EduData.map((data) => {
+                return <ItemForm
+                    key={data.id}
+                    item={data}
+                    onSave={onEditItem}
+                />
+            })}
             <form className="form-container" onSubmit={(e) => {
                 e.preventDefault();
-                onAddItem(EduObject);
+                onAddItem({...EduObject, id: uuidv4()});
                 setEduObject({
-                    organisation: '',
+                    Organisation: '',
                     degree: '',
                     startDate: '',
                     endDate: '',
                     location: ''
                 });
             }}>
-                <label className="form-label" htmlFor="organisation">
-                    <span>University/Organisation</span>
-                    <input type="text" value={EduObject.organisation} onChange={handleBasicEduChange} id="organisation" name="organisation"></input>
+                <label className="form-label" htmlFor="Organisation">
+                    <span>Organisation</span>
+                    <input type="text" value={EduObject.Organisation} onChange={handleBasicEduChange} id="Organisation" name="Organisation"></input>
                 </label>
                 <label className="form-label" htmlFor="degree">
                     <span>Degree</span>
