@@ -7,12 +7,13 @@ export default function MainEditor(props) {
     const {
         BasicData,
         EduData,
-        ExperienceData,
+        ExpData,
         SkillsData,
         handleInfoChange,
         handleEduChange,
         handleEduEdit,
-        handleExperienceChange,
+        handleExpAdd,
+        handleExpEdit,
         handleSkillsChange} 
 
         = props;
@@ -20,7 +21,7 @@ export default function MainEditor(props) {
         <div className="Editor-side">
             <BasicInfoEdit data={BasicData} handleChange={handleInfoChange} />
             <EducationEditor EduData={EduData} onEditItem={handleEduEdit} onAddItem={handleEduChange}/>
-            <ExperienceEditor data={ExperienceData} handleChange = {handleExperienceChange} />
+            <ExperienceEditor ExpData = {ExpData} onAddItem={handleExpAdd} onEditItem={handleExpEdit} />
             <SkillsEditor data={SkillsData} handleChange = {handleSkillsChange} />
         </div>
     )
