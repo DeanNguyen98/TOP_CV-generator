@@ -31,6 +31,18 @@ export default function ItemForm (props) {
                         } else {
                             label = key;
                         }
+                        if (key === "Description") return (
+                            <label key={key} htmlFor={key}>
+                            <span>{label}</span>
+                            <textarea
+                                type={key.includes('Date') ? "month" : "text"}
+                                id={key}
+                                name={key}
+                                value={editableItem[key]}
+                                onChange={handleInputChange}
+                            />
+                        </label>
+                        )
                         return (
                             <label key={key} htmlFor={key}>
                                 <span>{label}</span>
