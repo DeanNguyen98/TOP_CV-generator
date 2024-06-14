@@ -1,10 +1,11 @@
 import {useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import ItemForm from './ItemForm';
 
-export function ExperienceEditor ({ExpData, onAddItem}) {
+export function ExperienceEditor ({ExpData, onAddItem, onEditItem}) {
     const [ExpObject, setExpObject] = useState({
         company: '',
-        JobTitle: '',
+        Title: '',
         Expstart: '',
         ExpEnd: '',
         ExpDescription: ''
@@ -18,14 +19,21 @@ export function ExperienceEditor ({ExpData, onAddItem}) {
     }
     return (
         <>
+            {ExpData.length > 0 && ExpData.map(data => (
+                <ItemForm 
+                    key={data.id}
+                    item={data}
+                    onSave={onEditItem}
+                />
+            ))}
             <form className="form-container" onSubmit={(e) => {
                 e.preventDefault();
                 onAddItem({...ExpObject, id: uuidv4()});
                 setExpObject({
                     company: '',
-                    JobTitle: '',
-                    Expstart: '',
-                    ExpEnd: '',
+                    Title: '',
+                    startDate: '',
+                    endDate: '',
                     ExpDescription: ''
                 })
             }}>
@@ -33,17 +41,17 @@ export function ExperienceEditor ({ExpData, onAddItem}) {
                     <span>Company name</span>
                     <input type="text" id="company" name="company" onChange={handleAddExpObject}></input>
                 </label>
-                <label className="form-label" htmlFor="JobTitle">
-                    <span>University/Organisation</span>
-                    <input type="text" id="jobTitle" name="jobTitle" onChange={handleAddExpObject}></input>
+                <label className="form-label" htmlFor="Title">
+                    <span>Title</span>
+                    <input type="text" id="jobTitle" name="Title" onChange={handleAddExpObject}></input>
                 </label>
-                <label className="form-label" htmlFor="Expstart">
+                <label className="form-label" htmlFor="startDate">
                     <span>Start date</span>
-                    <input type="month" id="Expstart" name="Expstart" onChange={handleAddExpObject}></input>
+                    <input type="month" id="startDate" name="startDate" onChange={handleAddExpObject}></input>
                 </label>
-                <label className="form-label" htmlFor="ExpEnd">
+                <label className="form-label" htmlFor="endDate">
                     <span>End date</span>
-                    <input type="month" id="ExpEnd" name="ExpEnd" onChange={handleAddExpObject}></input>
+                    <input type="month" id="endDate" name="endDate" onChange={handleAddExpObject}></input>
                 </label>
                 <label className="form-label" htmlFor="ExpDescription">
                     <span>Job description</span>
