@@ -34,17 +34,31 @@ function App() {
     })
   }
 
+  function handleAddExpItem (ExpObject) {
+    setExperienceInfo(prevExpInfo => [
+      ...prevExpInfo, ExpObject
+    ])
+  }
+
+  function editExpItem(updatedItem) {
+    setExperienceInfo((prevExpInfo) => {
+      return prevExpInfo.map(item => item.id === updatedItem.id ? updatedItem : item)
+    })
+  }
+
   return (
     <>
       {console.log(EduInfo)}
       <MainEditor
         BasicData={BasicInfo}
         EduData = {EduInfo}
-        ExperienceData = {ExperienceInfo}
+        ExpData = {ExperienceInfo}
         SkillsData = {SkillsInfo}
         handleInfoChange = {handleBasicInfoChange}
         handleEduEdit = {EditEduItem}
         handleEduChange = {handleAddEduItem}
+        handleExpAdd = {handleAddExpItem}
+        handleExpEdit = {editExpItem}
       />
     </>
   )
