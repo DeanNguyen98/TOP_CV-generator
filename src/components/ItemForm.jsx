@@ -10,9 +10,10 @@ export default function ItemForm (props) {
             ...editableItem, [name] : value
         });
     }
+    const objectkeys = Object.keys(item);
     return (
         <div className="itemForm">
-            <h3>{item.Organisation}/{item.degree}</h3>
+            <h3>{item[objectkeys[0]]}/{item[objectkeys[1]]}</h3>
             <button onClick={()=> setisShow(true)}>Edit</button>
             {isShow && (
                 <form className="form-container" onSubmit={(e) => {
@@ -20,26 +21,29 @@ export default function ItemForm (props) {
                     onSave(editableItem);
                     setisShow(false);
                 }}>
-                    <label htmlFor="Organisation">
-                        <span>Organisation</span>
-                        <input type="text" id="Organisation" name={item.Organisation} value={editableItem.Organisation} onChange={handleInputChange}></input>
-                    </label>
-                    <label htmlFor="degree">
-                        <span>Degree</span>
-                        <input type="text" id="degree" name="degree" value={editableItem.degree} onChange={handleInputChange}></input>
-                    </label>
-                    <label htmlFor="startDate">
-                        <span>Start date</span>
-                        <input type="month" id="startDate" name="startDate" value={editableItem.startDate} onChange={handleInputChange}></input>
-                    </label>
-                    <label htmlFor="endDate">
-                        <span>End Date</span>
-                        <input type="month" id="endDate" name="endDate" value={editableItem.endDate} onChange={handleInputChange}></input>
-                    </label>
-                    <label htmlFor="location">
-                        <span>Location</span>
-                        <input type="text" id="location" name="location" value={editableItem.location} onChange={handleInputChange}></input>
-                    </label>
+                       {objectkeys.map((key) => {
+                        if (key === "type" || key === "id") return null;
+                        let label;
+                        if (key === "startDate") {
+                            label = "Start Date";
+                        } else if (key === "endDate") {
+                            label = "End Date"
+                        } else {
+                            label = key;
+                        }
+                        return (
+                            <label key={key} htmlFor={key}>
+                                <span>{label}</span>
+                                <input
+                                    type={key.includes('Date') ? "month" : "text"}
+                                    id={key}
+                                    name={key}
+                                    value={editableItem[key]}
+                                    onChange={handleInputChange}
+                                />
+                            </label>
+                        );
+                       })}
                     <button type="submit">Save changes</button>
                 </form>
             )}
