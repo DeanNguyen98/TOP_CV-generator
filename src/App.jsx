@@ -28,6 +28,12 @@ function App() {
     ])
   }
 
+  function EditEduItem(updatedItem) {
+    setEduInfo((prevEduInfo) => {
+      return prevEduInfo.map(item => item.id === updatedItem.id ? updatedItem : item  )
+    })
+  }
+
   return (
     <>
       {console.log(EduInfo)}
@@ -37,6 +43,7 @@ function App() {
         ExperienceData = {ExperienceInfo}
         SkillsData = {SkillsInfo}
         handleInfoChange = {handleBasicInfoChange}
+        handleEduEdit = {EditEduItem}
         handleEduChange = {handleAddEduItem}
       />
     </>
