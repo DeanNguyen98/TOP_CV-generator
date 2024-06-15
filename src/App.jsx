@@ -46,19 +46,34 @@ function App() {
     })
   }
 
+  function handleAddSkillItem(skillObject) {
+    setSkillsInfo(prevSkillInfo => [
+      ...prevSkillInfo, skillObject
+    ])
+  }
+
+  function editSkillItem(updatedItem) {
+    setSkillsInfo((prevSkillInfo) => {
+      return prevSkillInfo.map(item => item.id === updatedItem.id ? updatedItem : item)
+    })
+  }
+
   return (
     <>
       {console.log(EduInfo)}
+      {console.log(SkillsInfo)}
       <MainEditor
         BasicData={BasicInfo}
         EduData = {EduInfo}
         ExpData = {ExperienceInfo}
-        SkillsData = {SkillsInfo}
+        SkillData = {SkillsInfo}
         handleInfoChange = {handleBasicInfoChange}
         handleEduEdit = {EditEduItem}
         handleEduChange = {handleAddEduItem}
         handleExpAdd = {handleAddExpItem}
         handleExpEdit = {editExpItem}
+        handleSkillsChange = {handleAddSkillItem}
+        handleSkillEdit = {editSkillItem}
       />
     </>
   )
