@@ -39,11 +39,11 @@ export function ExperienceEditor ({ExpData, onAddItem, onEditItem}) {
             }}>
                 <label className="form-label" htmlFor="Company">
                     <span>Company name</span>
-                    <input type="text" id="company" name="Company" value={ExpObject.Company} onChange={handleAddExpObject}></input>
+                    <input type="text" id="Company" name="Company" value={ExpObject.Company} onChange={handleAddExpObject}></input>
                 </label>
                 <label className="form-label" htmlFor="Title">
                     <span>Title</span>
-                    <input type="text" id="jobTitle" name="Title" value={ExpObject.Title} onChange={handleAddExpObject}></input>
+                    <input type="text" id="Title" name="Title" value={ExpObject.Title} onChange={handleAddExpObject}></input>
                 </label>
                 <label className="form-label" htmlFor="startDate">
                     <span>Start date</span>
