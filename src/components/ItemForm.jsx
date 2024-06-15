@@ -10,10 +10,13 @@ export default function ItemForm (props) {
             ...editableItem, [name] : value
         });
     }
+
+    //asign a key object to split the name of each item in the item object into an array 
+    //for easy reference
     const objectkeys = Object.keys(item);
     return (
         <div className="itemForm">
-            <h3>{item[objectkeys[0]]}/{item[objectkeys[1]]}</h3>
+            <h3>{item.length > 2 ? item[objectkeys[0]]/item[objectkeys[1]] : item[objectkeys[0]]}</h3>
             <button onClick={()=> setisShow(true)}>Edit</button>
             {isShow && (
                 <form className="form-container" onSubmit={(e) => {
