@@ -8,13 +8,15 @@ export default function MainEditor(props) {
         BasicData,
         EduData,
         ExpData,
-        SkillsData,
+        SkillData,
         handleInfoChange,
         handleEduChange,
         handleEduEdit,
         handleExpAdd,
         handleExpEdit,
-        handleSkillsChange} 
+        handleSkillsChange,
+        handleSkillEdit
+    } 
 
         = props;
     return (
@@ -22,7 +24,7 @@ export default function MainEditor(props) {
             <BasicInfoEdit data={BasicData} handleChange={handleInfoChange} />
             <EducationEditor EduData={EduData} onEditItem={handleEduEdit} onAddItem={handleEduChange}/>
             <ExperienceEditor ExpData = {ExpData} onAddItem={handleExpAdd} onEditItem={handleExpEdit} />
-            <SkillsEditor data={SkillsData} handleChange = {handleSkillsChange} />
+            <SkillsEditor SkillData={SkillData} onAddItem = {handleSkillsChange} onEditItem={handleSkillEdit} />
         </div>
     )
 }
