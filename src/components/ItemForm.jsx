@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function ItemForm (props) {
-    const {item, onSave} = props;
+    const {item, onSave, onRemove} = props;
     const [isShow, setisShow] = useState(false);
     const [editableItem, seteditableItem] = useState({...item});
     const handleInputChange = (e) => {
@@ -60,6 +60,9 @@ export default function ItemForm (props) {
                         );
                        })}
                     <button type="submit">Save changes</button>
+                    <button onClick={() => {
+                        onRemove(editableItem)
+                    }}>Remove</button>
                 </form>
             )}
         </div>

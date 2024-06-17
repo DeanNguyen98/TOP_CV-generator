@@ -11,6 +11,7 @@ export default function MainEditor(props) {
         SkillData,
         handleInfoChange,
         handleEduChange,
+        handleEduRemove,
         handleEduEdit,
         handleExpAdd,
         handleExpEdit,
@@ -22,7 +23,7 @@ export default function MainEditor(props) {
     return (
         <div className="Editor-side">
             <BasicInfoEdit data={BasicData} handleChange={handleInfoChange} />
-            <EducationEditor EduData={EduData} onEditItem={handleEduEdit} onAddItem={handleEduChange}/>
+            <EducationEditor EduData={EduData} onEditItem={handleEduEdit} onAddItem={handleEduChange} onRemoveItem={handleEduRemove}/>
             <ExperienceEditor ExpData = {ExpData} onAddItem={handleExpAdd} onEditItem={handleExpEdit} />
             <SkillsEditor SkillData={SkillData} onAddItem = {handleSkillsChange} onEditItem={handleSkillEdit} />
         </div>

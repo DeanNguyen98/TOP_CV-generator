@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import ItemForm from "./ItemForm";
+import '../styles/editor.scss'
 
-export function EducationEditor({onAddItem, EduData, onEditItem}) {
+export function EducationEditor({onAddItem, EduData, onEditItem, onRemoveItem}) {
     const [EduObject, setEduObject] = useState({
         Organisation: '',
         degree: '',
@@ -23,6 +24,7 @@ export function EducationEditor({onAddItem, EduData, onEditItem}) {
                     key={data.id}
                     item={data}
                     onSave={onEditItem}
+                    onRemove={onRemoveItem}
                 />
             })}
             <form className="form-container" onSubmit={(e) => {
@@ -36,6 +38,7 @@ export function EducationEditor({onAddItem, EduData, onEditItem}) {
                     location: ''
                 });
             }}>
+                <h2>Education</h2>
                 <label className="form-label" htmlFor="Organisation">
                     <span>Organisation</span>
                     <input type="text" value={EduObject.Organisation} onChange={handleAddEduObject} id="Organisation" name="Organisation"></input>
