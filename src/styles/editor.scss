@@ -1,0 +1,42 @@
+$editor-bg: #f0eeeb;
+
+.Editor-side {
+    flex-grow: 1;
+    flex-wrap: wrap;
+    height: fit-content;
+    max-width: 600px;
+    background-color: $editor-bg;
+    padding: 24px;
+    border-radius: 20px
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    h2 {
+        margin: 10px 0px;
+        font-size: 1.6rem;
+    }
+     button {
+        flex: 1;
+        align-self: center;
+        margin-top: 10px;
+     }
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+    gap: 5px;
+    input {
+        padding: 15px  10px;
+        font-size: 1.2rem;
+        border-radius: 15px;
+        border: none;
+    }
+    span {
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+}
