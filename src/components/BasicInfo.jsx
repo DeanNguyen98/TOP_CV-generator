@@ -3,6 +3,7 @@ export function BasicInfoEdit (props) {
     return (
         <>
         <form className="form-container">
+            <h2>Personal Details</h2>
             <label className="form-label" htmlFor="firstname">
                 <span>First name</span>
                 <input type="text" id="firstname" value ={data.firstname} onChange={handleChange} name="firstname"></input>
