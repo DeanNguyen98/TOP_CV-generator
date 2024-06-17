@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import './App.css'
+import './styles/App.css'
 import MainEditor from './components/Editor';
+import CVpreview from './components/CVpreview/preview';
 
 function App() {
   const [BasicInfo, setBasicInfo] = useState({
@@ -34,6 +35,12 @@ function App() {
     })
   }
 
+  function removeEduItem(updatedItem) {
+    setEduInfo((prevEduInfo) => {
+      return prevEduInfo.filter(item => item.id !== updatedItem.id)
+    })
+  }
+
   function handleAddExpItem (ExpObject) {
     setExperienceInfo(prevExpInfo => [
       ...prevExpInfo, ExpObject
@@ -59,9 +66,8 @@ function App() {
   }
 
   return (
-    <>
-      {console.log(EduInfo)}
-      {console.log(SkillsInfo)}
+      <div className='App'>
+        {console.log(EduInfo)}
       <MainEditor
         BasicData={BasicInfo}
         EduData = {EduInfo}
@@ -69,13 +75,20 @@ function App() {
         SkillData = {SkillsInfo}
         handleInfoChange = {handleBasicInfoChange}
         handleEduEdit = {EditEduItem}
+        handleEduRemove = {removeEduItem}
         handleEduChange = {handleAddEduItem}
         handleExpAdd = {handleAddExpItem}
         handleExpEdit = {editExpItem}
         handleSkillsChange = {handleAddSkillItem}
         handleSkillEdit = {editSkillItem}
       />
-    </>
+      <CVpreview
+        BasicInfo={BasicInfo}
+        Experience={ExperienceInfo}
+        Education={EduInfo}
+        Skills={SkillsInfo}
+      />
+      </div>
   )
 }
 
