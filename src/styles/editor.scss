@@ -1,4 +1,4 @@
-$editor-bg: #f0eeeb;
+$editor-bg: #ffffff;
 
 .Editor-side {
     flex-grow: 1;
@@ -34,6 +34,7 @@ $editor-bg: #f0eeeb;
         font-size: 1.2rem;
         border-radius: 15px;
         border: none;
+        background-color: #ebedf0;
     }
     span {
         font-weight: 500;
