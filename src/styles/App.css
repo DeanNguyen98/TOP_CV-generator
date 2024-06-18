@@ -1,5 +1,4 @@
 #root {
-  max-width: 1280px;
   padding: 2rem;
 }
 
@@ -12,8 +11,9 @@
 .App {
   display: flex;
   gap: 24px;
-  margin: auto;
+  margin: 0 auto;
   padding: 32px 24px;
   width: 100%;
+  max-width: 1500px;
 }
 
