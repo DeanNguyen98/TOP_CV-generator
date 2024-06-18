@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.cv-preview {
+    width: 210mm;
+    height: 297mm;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0,0, 0.1);
+    overflow: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Nunito", sans-serif;
+}
+
+.CV-BasicInfo {
+    min-height: 40mm;
+    background-color: #0f3775;
+    color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+    font-weight: 600;    
+    h1 {
+        font-size: 2.5rem;
+    }
+    .contact-details {
+        display: flex;
+        gap: 2rem;
+        span {
+            display: flex;
+            gap: .2rem;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
+
+.section {
+    margin: 30px 30px;
+}
+
+.section h3 {
+    text-align: center;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #0f3775;
+}
+
+.ctn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.education-ctn {
+    padding-top: 15px;
+}
+.item-ctn {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.eduItem-ctn{
+    display: flex;
+    gap: 24px;
+    .eduItem-right {
+        p:first-of-type {
+            font-weight: 700;
+        }
+    }
+    
+}
