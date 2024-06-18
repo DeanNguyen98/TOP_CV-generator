@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import ItemForm from "./ItemForm";
-import '../styles/editor.scss'
 
 export function EducationEditor({onAddItem, EduData, onEditItem, onRemoveItem}) {
     const [EduObject, setEduObject] = useState({

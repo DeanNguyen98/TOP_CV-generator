@@ -2,6 +2,7 @@ import { BasicInfoEdit } from "./BasicInfo";
 import { EducationEditor } from "./EducationEdit";
 import { ExperienceEditor } from "./ExperienceEdit";
 import { SkillsEditor } from "./SkillsEdit";
+import '../styles/editor.scss'
 
 export default function MainEditor(props) {
     const {
