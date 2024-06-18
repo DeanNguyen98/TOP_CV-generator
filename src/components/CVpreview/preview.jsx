@@ -1,28 +1,30 @@
+import "../../styles/preview.scss";
+
 export default function CVpreview(props) {
     const {BasicInfo, Experience, Education, Skills} = props
     return (
-        <>
+        <div className="cv-preview">
             <div className="CV-BasicInfo">
-                <h3>{BasicInfo.firstname} {BasicInfo.lastname}</h3>
+                <h1>{BasicInfo.firstname} {BasicInfo.lastname}</h1>
                 <div className="contact-details">
                     <div>
-                        <span>{BasicInfo.email}</span>
+                        <span><i className="fa-solid fa-envelope"></i>{BasicInfo.email}</span>
                     </div>
                     <div>
-                        <span>{BasicInfo.phonenumber}</span>
+                        <span><i className="fa-solid fa-phone"></i>{BasicInfo.phonenumber}</span>
                     </div>
                     <div>
-                        <span>{BasicInfo.address}</span>
+                        <span><i className="fa-solid fa-location-dot"></i>{BasicInfo.address}</span>
                     </div>
                 </div>
             </div>
-            <div className="CV-EducationInfo">
+            <div className="CV-EducationInfo section">
                 {Education.length > 0 && 
                     <h3>Education</h3>
                 }
-                <div className="education-ctn">
+                <div className="education-ctn ctn ">
                     {Education.map((item) => (
-                        <div key={item.id} className="eduItem-ctn">
+                        <div key={item.id} className="eduItem-ctn item-ctn">
                             <div className="eduItem-left">
                                 <p>{item.startDate} <span>-</span>{item.endDate}</p>
                                 <p>{item.location}</p>
@@ -35,7 +37,7 @@ export default function CVpreview(props) {
                     ))}
                 </div>
             </div>
-            <div className="CV-ExperienceInfo">
+            <div className="CV-ExperienceInfo section">
                 {Experience.length > 0  && <h3>Work Experience</h3> }
                 <div className="experience-ctn">
                     {Experience.map((item) => (
@@ -53,7 +55,7 @@ export default function CVpreview(props) {
                     ))}
                 </div>
             </div>
-            <div className="CV-SkillInfo">
+            <div className="CV-SkillInfo section">
                 {Skills.length > 0 &&  <h3>Skills</h3>}
                 <div className="skills-ctn">
                     {Skills.map((item) => (
@@ -61,6 +63,6 @@ export default function CVpreview(props) {
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     )
 }
