@@ -18,6 +18,10 @@ export default function CVpreview(props) {
                     </div>
                 </div>
             </div>
+            <div className="CV-about section">
+                <h3>About Me</h3>
+                <div className="about-ctn ctn ">{BasicInfo.about}</div>
+            </div>
             <div className="CV-EducationInfo section">
                 {Education.length > 0 && 
                     <h3>Education</h3>
@@ -57,10 +61,12 @@ export default function CVpreview(props) {
             </div>
             <div className="CV-SkillInfo section">
                 {Skills.length > 0 &&  <h3>Skills</h3>}
-                <div className="skills-ctn">
+                <div>
+                    <ul className="skills-ctn ctn">
                     {Skills.map((item) => (
-                        <p key={item.id}>{item.skill}</p>
+                        <li key={item.id}>{item.skill}</li>
                     ))}
+                    </ul>
                 </div>
             </div>
         </div>

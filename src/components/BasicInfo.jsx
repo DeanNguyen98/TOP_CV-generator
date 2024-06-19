@@ -28,6 +28,10 @@ export function BasicInfoEdit (props) {
                 <span>Address</span>
                 <input type="address" id="address" value={data.address} onChange={handleChange} name="address"></input>
             </label>
+            <label className="form-label" htmlFor="about">
+                <span>About yourself</span>
+                <textarea id="about" value={data.about} name="about" onChange={handleChange}></textarea>
+            </label>
 
         </form>
         </>
