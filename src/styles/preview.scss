@@ -53,21 +53,34 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
-.education-ctn {
     padding-top: 15px;
 }
+
 .item-ctn {
     font-size: 1.1rem;
     font-weight: 400;
-}
-.eduItem-ctn{
     display: flex;
     gap: 24px;
+
+}
+
+.eduItem-ctn{
     .eduItem-right {
         p:first-of-type {
             font-weight: 700;
         }
     }
     
+}
+
+.expItem-ctn {
+    .expItem-left {
+        min-width: 170px;
+    }
+    .expItem-right {
+        p:first-of-type {
+            font-weight: 700;
+            font-size: 1.2rem
+        }
+    }
 }
