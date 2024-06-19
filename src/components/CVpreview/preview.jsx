@@ -39,12 +39,12 @@ export default function CVpreview(props) {
             </div>
             <div className="CV-ExperienceInfo section">
                 {Experience.length > 0  && <h3>Work Experience</h3> }
-                <div className="experience-ctn">
+                <div className="experience-ctn ctn">
                     {Experience.map((item) => (
-                        <div key={item.id}>
+                        <div key={item.id} className="expItem-ctn item-ctn">
                             <div className="expItem-left">
                                 <p>{item.startDate} <span>-</span>{item.endDate}</p>
-                                <p>{item.location}</p>
+                                <p>{item.Location}</p>
                             </div>
                             <div className="expItem-right">
                                 <p>{item.Company}</p>
