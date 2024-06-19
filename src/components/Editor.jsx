@@ -16,17 +16,20 @@ export default function MainEditor(props) {
         handleEduEdit,
         handleExpAdd,
         handleExpEdit,
+        handleExpRemove,
         handleSkillsChange,
-        handleSkillEdit
+        handleSkillEdit,
+        handleSkillRemove
     } 
 
         = props;
     return (
         <div className="Editor-side">
+            <h1>CV Generator</h1>
             <BasicInfoEdit data={BasicData} handleChange={handleInfoChange} />
             <EducationEditor EduData={EduData} onEditItem={handleEduEdit} onAddItem={handleEduChange} onRemoveItem={handleEduRemove}/>
-            <ExperienceEditor ExpData = {ExpData} onAddItem={handleExpAdd} onEditItem={handleExpEdit} />
-            <SkillsEditor SkillData={SkillData} onAddItem = {handleSkillsChange} onEditItem={handleSkillEdit} />
+            <ExperienceEditor ExpData = {ExpData} onAddItem={handleExpAdd} onEditItem={handleExpEdit} onRemoveItem={handleExpRemove} />
+            <SkillsEditor SkillData={SkillData} onAddItem = {handleSkillsChange} onEditItem={handleSkillEdit} onRemoveItem={handleSkillRemove} />
         </div>
     )
 }
