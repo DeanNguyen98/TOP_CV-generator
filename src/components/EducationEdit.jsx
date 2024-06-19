@@ -58,7 +58,7 @@ export function EducationEditor({onAddItem, EduData, onEditItem, onRemoveItem}) 
                     <span>Location</span>
                     <input type="text" id="location" value={EduObject.location} onChange={handleAddEduObject} name="location"></input>
                 </label>
-                <button type="submit">Submit</button>
+                <button type="submit">Add Education</button>
             </form>
         </>
     )
