@@ -2,12 +2,13 @@ import {useState} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import ItemForm from './ItemForm';
 
-export function ExperienceEditor ({ExpData, onAddItem, onEditItem}) {
+export function ExperienceEditor ({ExpData, onAddItem, onEditItem, onRemoveItem}) {
     const [ExpObject, setExpObject] = useState({
         Company: '',
         Title: '',
         startDate: '',
         endDate: '',
+        Location: '',
         Description: ''
     })
 
@@ -19,11 +20,13 @@ export function ExperienceEditor ({ExpData, onAddItem, onEditItem}) {
     }
     return (
         <>
+            <h2 className="form-header">Experience</h2>
             {ExpData.length > 0 && ExpData.map(data => (
                 <ItemForm 
                     key={data.id}
                     item={data}
                     onSave={onEditItem}
+                    onRemove={onRemoveItem}
                 />
             ))}
             <form className="form-container" onSubmit={(e) => {
@@ -34,6 +37,7 @@ export function ExperienceEditor ({ExpData, onAddItem, onEditItem}) {
                     Title: '',
                     startDate: '',
                     endDate: '',
+                    Location: '',
                     Description: ''
                 })
             }}>
@@ -52,6 +56,10 @@ export function ExperienceEditor ({ExpData, onAddItem, onEditItem}) {
                 <label className="form-label" htmlFor="endDate">
                     <span>End date</span>
                     <input type="month" id="endDate" name="endDate" value={ExpObject.endDate} onChange={handleAddExpObject}></input>
+                </label>
+                <label className="form-label" htmlFor="Location">
+                    <span>Location</span>
+                    <input type="text" id="Location" name="Location" value={ExpObject.Location} onChange={handleAddExpObject}></input>
                 </label>
                 <label className="form-label" htmlFor="Description">
                     <span>Job description</span>
