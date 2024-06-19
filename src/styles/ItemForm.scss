@@ -1,0 +1,43 @@
+.itemForm {
+    margin: 10px;
+}
+
+.form-banner {
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    background-color: #ebedf0;
+    box-sizing: border-box;
+    border: 1.5px solid #0b86e3;
+}
+
+.form-banner:hover {
+    background-color: #0b86e3;
+}
+
+.edit-btn {
+    padding: 5px;
+    border: 2px solid transparent;
+}
+.edit-btn:hover {
+    border: 2px solid #ebedf0;
+    border-radius: 5px;
+}
+.form-expand {
+    animation: expand .5s ease-in;
+    transform-origin: top;
+  }
+  
+  @keyframes expand {
+    0% {
+      transform: scaleY(0);
+    }
+    70% {
+      transform: scaleY(1.1);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
