@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "../styles/ItemForm.scss"
 export default function ItemForm (props) {
     const {item, onSave, onRemove} = props;
     const [isShow, setisShow] = useState(false);
@@ -16,10 +16,12 @@ export default function ItemForm (props) {
     const objectkeys = Object.keys(item);
     return (
         <div className="itemForm">
-            <h3>{item.length > 2 ? item[objectkeys[0]]/item[objectkeys[1]] : item[objectkeys[0]]}</h3>
-            <button onClick={()=> setisShow(true)}>Edit</button>
+            <div className="form-banner">
+                <h3>{item.length > 2 ? item[objectkeys[0]]/item[objectkeys[1]] : item[objectkeys[0]]}</h3>
+                <i className="fa-solid fa-pen edit-btn" onClick={()=> setisShow(true)}></i>
+            </div>
             {isShow && (
-                <form className="form-container" onSubmit={(e) => {
+                <form className="form-container form-expand" onSubmit={(e) => {
                     e.preventDefault();
                     onSave(editableItem);
                     setisShow(false);
@@ -35,7 +37,7 @@ export default function ItemForm (props) {
                             label = key;
                         }
                         if (key === "Description") return (
-                            <label key={key} htmlFor={key}>
+                            <label className="form-label" key={key} htmlFor={key}>
                             <span>{label}</span>
                             <textarea
                                 type={key.includes('Date') ? "month" : "text"}
@@ -47,7 +49,7 @@ export default function ItemForm (props) {
                         </label>
                         )
                         return (
-                            <label key={key} htmlFor={key}>
+                            <label className="form-label" key={key} htmlFor={key}>
                                 <span>{label}</span>
                                 <input
                                     type={key.includes('Date') ? "month" : "text"}
