@@ -23,6 +23,8 @@ function App() {
     })
   }
 
+  //Manipulate EduInfo functions
+
   function handleAddEduItem(EduObject) {
     setEduInfo(prevEduInfo => [
       ...prevEduInfo, EduObject
@@ -41,6 +43,10 @@ function App() {
     })
   }
 
+  //
+
+  //manipulate Experience functions
+
   function handleAddExpItem (ExpObject) {
     setExperienceInfo(prevExpInfo => [
       ...prevExpInfo, ExpObject
@@ -53,6 +59,15 @@ function App() {
     })
   }
 
+  function removeExpItem(updatedItem) {
+    setExperienceInfo((prevExpInfo) => {
+      return prevExpInfo.filter(item => item.id !== updatedItem.id)
+    })
+  }
+
+  //
+
+  //manipulate Skill functions
   function handleAddSkillItem(skillObject) {
     setSkillsInfo(prevSkillInfo => [
       ...prevSkillInfo, skillObject
@@ -64,6 +79,14 @@ function App() {
       return prevSkillInfo.map(item => item.id === updatedItem.id ? updatedItem : item)
     })
   }
+
+  function removeSkillItem(updatedItem) {
+    setSkillsInfo((prevSkillInfo) => {
+      return prevSkillInfo.filter(item => item.id !== updatedItem.id)
+    })
+  }
+
+  //
 
   return (
       <div className='App'>
@@ -79,8 +102,10 @@ function App() {
         handleEduChange = {handleAddEduItem}
         handleExpAdd = {handleAddExpItem}
         handleExpEdit = {editExpItem}
+        handleExpRemove = {removeExpItem}
         handleSkillsChange = {handleAddSkillItem}
         handleSkillEdit = {editSkillItem}
+        handleSkillRemove = {removeSkillItem}
       />
       <CVpreview
         BasicInfo={BasicInfo}
