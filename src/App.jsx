@@ -10,7 +10,8 @@ function App() {
     title:'',
     phonenumber: '',
     email:'',
-    address:''
+    address:'',
+    about:''
   })
   const [EduInfo, setEduInfo] = useState([]);
   const [ExperienceInfo, setExperienceInfo] = useState([]);
