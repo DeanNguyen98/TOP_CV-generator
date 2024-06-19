@@ -18,6 +18,7 @@ export function EducationEditor({onAddItem, EduData, onEditItem, onRemoveItem}) 
       }
     return (
         <>
+        <h2 className="form-header">Education</h2>
             {EduData.length > 0 && EduData.map((data) => {
                 return <ItemForm
                     key={data.id}
@@ -37,7 +38,6 @@ export function EducationEditor({onAddItem, EduData, onEditItem, onRemoveItem}) 
                     location: ''
                 });
             }}>
-                <h2>Education</h2>
                 <label className="form-label" htmlFor="Organisation">
                     <span>Organisation</span>
                     <input type="text" value={EduObject.Organisation} onChange={handleAddEduObject} id="Organisation" name="Organisation"></input>
