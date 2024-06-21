@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 .cv-preview {
-    width: 210mm;
+    width: 100%;
+    max-width: 210mm; 
     height: 297mm;
     background: white;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0,0, 0.1);
     overflow: auto;
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    font-family: "Nunito", sans-serif;
+    font-size: 16px;
 }
 
 .CV-BasicInfo {
@@ -23,9 +23,9 @@
     align-items: center;
     padding: 2rem;
     font-weight: 600;    
-    h1 {
-        font-size: 2.5rem;
-    }
+    // h1 {
+    //     font-size: 2.5rem;
+    // }
     .contact-details {
         display: flex;
         gap: 2rem;
@@ -45,7 +45,7 @@
 
 .section h3 {
     text-align: center;
-    font-size: 1.4rem;
+    // font-size: 1.4rem;
     border-bottom: 2px solid #0f3775;
 }
 
@@ -57,10 +57,10 @@
 }
 
 .about-ctn {
-    font-size: 1.07rem
+    // font-size: 1.07rem
 }
 .item-ctn {
-    font-size: 1.1rem;
+    // font-size: 1.1rem;
     font-weight: 400;
     display: flex;
     gap: 24px;
@@ -68,6 +68,9 @@
 }
 
 .eduItem-ctn{
+    .eduItem-left {
+        min-width: 170px;
+    }
     .eduItem-right {
         p:first-of-type {
             font-weight: 700;
@@ -83,7 +86,7 @@
     .expItem-right {
         p:first-of-type {
             font-weight: 700;
-            font-size: 1.2rem
+            // font-size: 1.2rem
         }
     }
 }
@@ -93,4 +96,27 @@
     grid-template-columns: repeat(2, 1fr);
     padding: 20px;
     gap: 10px;
+}
+
+@media print {
+    .cv-preview {
+        max-width: 210mm;
+        height: 297mm;
+        page-break-after: always;
+    }
+
+    .cv-preview span,
+    .cv-preview p {
+        font-size: 10px;
+    }
+
+    .cv-preview h1, 
+    .cv-preview h3, 
+    .cv-preview p, 
+    .cv-preview span, 
+    .cv-preview ul {
+        break-inside: avoid;
+    }
+
+
 }
