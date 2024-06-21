@@ -14,4 +14,20 @@
   max-width: 1500px;
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+  .App {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cv-preview {
+    font-size: .7rem;
+    span {
+      font-size: 1rem;
+    }
+  }
 
+}
