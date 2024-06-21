@@ -40,7 +40,7 @@ export default function ItemForm (props) {
                             <label className="form-label" key={key} htmlFor={key}>
                             <span>{label}</span>
                             <textarea
-                                type={key.includes('Date') ? "month" : "text"}
+                                type="text"
                                 id={key}
                                 name={key}
                                 value={editableItem[key]}
@@ -52,7 +52,7 @@ export default function ItemForm (props) {
                             <label className="form-label" key={key} htmlFor={key}>
                                 <span>{label}</span>
                                 <input
-                                    type={key.includes('Date') ? "month" : "text"}
+                                    type="text"
                                     id={key}
                                     name={key}
                                     value={editableItem[key]}

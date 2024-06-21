@@ -51,11 +51,11 @@ export function ExperienceEditor ({ExpData, onAddItem, onEditItem, onRemoveItem}
                 </label>
                 <label className="form-label" htmlFor="startDate">
                     <span>Start date</span>
-                    <input type="month" id="startDate" name="startDate" value={ExpObject.startDate} onChange={handleAddExpObject}></input>
+                    <input type="text" id="startDate" name="startDate" placeholder="MM/YYYY" value={ExpObject.startDate} onChange={handleAddExpObject}></input>
                 </label>
                 <label className="form-label" htmlFor="endDate">
                     <span>End date</span>
-                    <input type="month" id="endDate" name="endDate" value={ExpObject.endDate} onChange={handleAddExpObject}></input>
+                    <input type="text" id="endDate" name="endDate" placeholder="MM/YYYY" value={ExpObject.endDate} onChange={handleAddExpObject}></input>
                 </label>
                 <label className="form-label" htmlFor="Location">
                     <span>Location</span>

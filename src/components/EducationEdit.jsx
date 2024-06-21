@@ -48,11 +48,11 @@ export function EducationEditor({onAddItem, EduData, onEditItem, onRemoveItem}) 
                 </label>
                 <label className="form-label" htmlFor="startDate">
                     <span>Start Date</span>
-                    <input type="month" id="startDate" value={EduObject.startDate} onChange={handleAddEduObject}  name="startDate" required></input>
+                    <input type="text" id="startDate" placeholder="MM/YYYY" value={EduObject.startDate} onChange={handleAddEduObject}  name="startDate" required></input>
                 </label>
                 <label className="form-label" htmlFor="endDate">
                     <span>End Date</span>
-                    <input type="month" id="endDate" value={EduObject.endDate} onChange={handleAddEduObject} name="endDate" required></input>
+                    <input type="text" id="endDate" placeholder="MM/YYYY" value={EduObject.endDate} onChange={handleAddEduObject} name="endDate" required></input>
                 </label>
                 <label className="form-label" htmlFor="location">
                     <span>Location</span>
