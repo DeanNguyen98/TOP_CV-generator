@@ -40,23 +40,23 @@ export function EducationEditor({onAddItem, EduData, onEditItem, onRemoveItem}) 
             }}>
                 <label className="form-label" htmlFor="Organisation">
                     <span>Organisation</span>
-                    <input type="text" value={EduObject.Organisation} onChange={handleAddEduObject} id="Organisation" name="Organisation"></input>
+                    <input type="text" value={EduObject.Organisation} onChange={handleAddEduObject} id="Organisation" name="Organisation" placeholder="University name" required></input>
                 </label>
                 <label className="form-label" htmlFor="degree">
                     <span>Degree</span>
-                    <input type="text" id="degree" value={EduObject.degree} onChange={handleAddEduObject} name="degree"></input>
+                    <input type="text" id="degree" value={EduObject.degree} onChange={handleAddEduObject} name="degree" placeholder="Bachelor/Diploma" required></input>
                 </label>
                 <label className="form-label" htmlFor="startDate">
                     <span>Start Date</span>
-                    <input type="month" id="startDate" value={EduObject.startDate} onChange={handleAddEduObject}  name="startDate"></input>
+                    <input type="month" id="startDate" value={EduObject.startDate} onChange={handleAddEduObject}  name="startDate" required></input>
                 </label>
                 <label className="form-label" htmlFor="endDate">
                     <span>End Date</span>
-                    <input type="month" id="endDate" value={EduObject.endDate} onChange={handleAddEduObject} name="endDate"></input>
+                    <input type="month" id="endDate" value={EduObject.endDate} onChange={handleAddEduObject} name="endDate" required></input>
                 </label>
                 <label className="form-label" htmlFor="location">
                     <span>Location</span>
-                    <input type="text" id="location" value={EduObject.location} onChange={handleAddEduObject} name="location"></input>
+                    <input type="text" id="location" value={EduObject.location} onChange={handleAddEduObject} name="location" placeholder="Sydney NSW"></input>
                 </label>
                 <button type="submit">Add Education</button>
             </form>

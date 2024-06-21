@@ -31,7 +31,7 @@ export function SkillsEditor ({SkillData, onEditItem, onAddItem, onRemoveItem}) 
         }}>
             <label className="form-label" htmlFor="skill">
                 <span>Skills</span>
-                <input type="text" id="skill" value={skillObject.skill} name="skill" onChange={handleSkillEdit}></input>
+                <input type="text" id="skill" value={skillObject.skill} name="skill" onChange={handleSkillEdit} placeholder="Teamwork/Microsoft Word/Excel"></input>
             </label>
             <button type="submit">Add skill</button>
         </form>

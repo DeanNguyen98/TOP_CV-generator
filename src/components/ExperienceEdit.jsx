@@ -43,11 +43,11 @@ export function ExperienceEditor ({ExpData, onAddItem, onEditItem, onRemoveItem}
             }}>
                 <label className="form-label" htmlFor="Company">
                     <span>Company name</span>
-                    <input type="text" id="Company" name="Company" value={ExpObject.Company} onChange={handleAddExpObject}></input>
+                    <input type="text" id="Company" name="Company" value={ExpObject.Company} onChange={handleAddExpObject} placeholder="Company's name" required></input>
                 </label>
                 <label className="form-label" htmlFor="Title">
                     <span>Title</span>
-                    <input type="text" id="Title" name="Title" value={ExpObject.Title} onChange={handleAddExpObject}></input>
+                    <input type="text" id="Title" name="Title" value={ExpObject.Title} onChange={handleAddExpObject} placeholder="Accountant" required></input>
                 </label>
                 <label className="form-label" htmlFor="startDate">
                     <span>Start date</span>
@@ -59,11 +59,11 @@ export function ExperienceEditor ({ExpData, onAddItem, onEditItem, onRemoveItem}
                 </label>
                 <label className="form-label" htmlFor="Location">
                     <span>Location</span>
-                    <input type="text" id="Location" name="Location" value={ExpObject.Location} onChange={handleAddExpObject}></input>
+                    <input type="text" id="Location" name="Location" value={ExpObject.Location} onChange={handleAddExpObject} placeholder="Sydney NSW"></input>
                 </label>
                 <label className="form-label" htmlFor="Description">
                     <span>Job description</span>
-                    <textarea type="text" id="Description" name="Description" value={ExpObject.Description} onChange={handleAddExpObject}></textarea>
+                    <textarea type="text" id="Description" name="Description" value={ExpObject.Description} onChange={handleAddExpObject} placeholder="Write a short description about your responsibilities at work"></textarea>
                 </label>
                 <button type="submit">Add Experience</button>
             </form>
